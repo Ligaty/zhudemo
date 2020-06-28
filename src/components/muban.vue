@@ -15,12 +15,23 @@
     </div>
 
     <!--底部导航栏-->
-    <van-tabbar v-model="active">
-      <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item name="apps-o" icon="apps-o">我参与的</van-tabbar-item>
-      <van-tabbar-item name="shopping-cart-o" icon="shopping-cart-o">购物车</van-tabbar-item>
-      <van-tabbar-item name="user-0" icon="user-o">我的</van-tabbar-item>
-    </van-tabbar>
+    <div id="footer" class="acea-row row-middle" >
+      <router-link
+        :to="item.url"
+        class="item"
+        :class="{ on: item.url === $route.path }"
+        v-for="(item, index) in footerList"
+        :key="index"
+      >
+        <div
+          class="iconfont"
+          :class="item.icon1 + ' ' + (item.url === $route.path ? item.icon2 : '')"
+        ></div>
+        <div>{{ item.name }}</div>
+      </router-link>
+    </div>
+
+
   </div>
 </template>
 
@@ -30,6 +41,32 @@
     data(){
       return{
         active:'0',
+        footerList: [
+          {
+            name: "首页",
+            icon1: "icon-shouye-xianxing",
+            icon2: "icon-shouye",
+            url: "/"
+          },
+          {
+            name: "我参与的",
+            icon1: "icon-yingyongchengxu-xianxing",
+            icon2: "icon-yingyongchengxu",
+            url: "/category"
+          },
+          {
+            name: "购物车",
+            icon1: "icon-caigou-xianxing",
+            icon2: "icon-caigou",
+            url: "/cart"
+          },
+          {
+            name: "我的",
+            icon1: "icon-yonghu-xianxing",
+            icon2: "icon-yonghu",
+            url: "/PersonalCenter"
+          }
+        ]
       }
     },
     methods:{

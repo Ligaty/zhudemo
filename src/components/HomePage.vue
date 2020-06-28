@@ -20,7 +20,9 @@
               <div>{{peopleamount}}人</div>
             </div>
           </div>
-          <input type="text" class="form-control input-lg search " placeholder="输入商品名称搜索" >
+          <router-link :to="'/search'">
+            <input type="text" class="form-control input-lg search " placeholder="输入商品名称搜索" >
+          </router-link>
         </div>
       </div>
 
@@ -35,10 +37,16 @@
 
       <!--part3-->
       <div>
-        <div class="part3" v-for="(menu,index) in menus" :key="index">
-          <img :src="menu.pic" style="width:70%">
-          <p style="text-align: center;font-size:16px;">{{menu.name}}</p>
-        </div>
+        <router-link
+          :to="menu.wap_url ? menu.wap_url : ''"
+          class="item"
+          v-for="(menu,index) in menus" :key="index"
+        >
+          <div class="part3" >
+            <img :src="menu.pic" style="width:70%">
+            <p style="text-align: center;font-size:16px;">{{menu.name}}</p>
+          </div>
+        </router-link>
       </div>
 
       <!--part4-->
@@ -69,10 +77,10 @@
       </div>
 
       <!--part7-->
-      <div class="like">
+      <div class="part7">
         <p class="like1">猜你喜欢</p>
-        <div class="like" >
-          <div class="good1" v-for="(good,index) in info.bastList" >
+        <div class="part7" >
+          <div class="good1" v-for="(good,index) in info.bastList" @click="goDetail(good)" :key="index">
             <div class="card card1">
               <img class="card-img-top "  :src="good.image" alt="Card image" style="width:100%;">
               <div class="card-body" >
@@ -145,23 +153,34 @@
 
 
 
+
       <div class="blank">-----------我是有底线的-----------</div>
 
     </div>
 
     <!--底部导航栏-->
-    <van-tabbar v-model="active">
-      <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item name="apps-o" icon="apps-o">我参与的</van-tabbar-item>
-      <van-tabbar-item name="shopping-cart-o" icon="shopping-cart-o">购物车</van-tabbar-item>
-      <van-tabbar-item name="user-0" icon="user-o">我的</van-tabbar-item>
-    </van-tabbar>
+    <div id="footer" class="acea-row row-middle" style="margin-left: -10px;">
+      <router-link
+        :to="item.url"
+        class="item"
+        :class="{ on: item.url === $route.path }"
+        v-for="(item, index) in footerList"
+        :key="index"
+      >
+        <div
+          class="iconfont"
+          :class="item.icon1 + ' ' + (item.url === $route.path ? item.icon2 : '')"
+        ></div>
+        <div>{{ item.name }}</div>
+      </router-link>
+    </div>
 
   </div>
 </template>
 
 <script>
   import { getHomeData } from "../api/public";
+  import { goShopDetail } from "../libs/order";
   export default {
     name:'demo',
     data(){
@@ -184,6 +203,32 @@
           {imgUrl:'https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg'}
         ],
         progressbar:'50',
+        footerList: [
+          {
+            name: "首页",
+            icon1: "icon-shouye-xianxing",
+            icon2: "icon-shouye",
+            url: "/"
+          },
+          {
+            name: "我参与的",
+            icon1: "icon-yingyongchengxu-xianxing",
+            icon2: "icon-yingyongchengxu",
+            url: "/category"
+          },
+          {
+            name: "购物车",
+            icon1: "icon-caigou-xianxing",
+            icon2: "icon-caigou",
+            url: "/cart"
+          },
+          {
+            name: "我的",
+            icon1: "icon-yonghu-xianxing",
+            icon2: "icon-yonghu",
+            url: "/PersonalCenter"
+          }
+        ]
       }
     },
     methods:{
@@ -193,14 +238,22 @@
       onClickRight(){
         alert("更多")
       },
+      // 商品详情跳转
+      goDetail(item) {
+        goShopDetail(item).then(() => {
+          this.$router.push({ path: "/detail/" + item.id });
+        });
+      },
 
     },
+
     mounted:function() {
       let that = this;
       getHomeData().then(response=>{
           that.$set(that,"banner", response.data.banner);
           that.$set(that, "menus", response.data.menus);
           that.$set(that, "info", response.data.info);
+
         })
         .catch(function (error) {
           alert("请求失败")
@@ -231,41 +284,29 @@
   .selectedbrand{text-align: center;font-size: 22px;margin:10px 0;font-weight: bolder}
   .selectedcontent{width: 23%;display: inline-block;float: left;margin-left:5px;}
   .part6{-webkit-justify-content:center;width: 96%;height:140px;display: inline-block;float: left;border-radius: 10px;margin-top: 10px;margin-left: 2%}
-  .like{
-    float: left;margin-top:10px;
-  }
-  .like1{
-    font-size: 20px;font-weight: bold;margin-left: 5%;text-align: left;width: 100%;
-  }
-  .good1{
-    width: 47%;float:left;margin-top:5px;margin-left:2%;
-  }
-  .card1{
-    border-radius: 10px;margin-left: 1%;margin-right: 5px;
-  }
-  .card-text{
-    color: #f65959;font-size: 18px;text-align: left;margin-left: 15px;width: 70%;
-  }
-  .card-title{margin-bottom: 0;}
-  .pinbao {
-    width: 40%;height: 35px;text-align: center;font-size:15px;color: white;margin-right: 3%;line-height: 20px;
-  }
-  .btn{padding:5px 12px;border-radius: 20px;}
+  .part7 {float: left;margin-top:10px;}
+  .part7 .like1{font-size: 20px;font-weight: bold;margin-left: 5%;text-align: left;width: 100%;}
+  .part7 .good1{width: 47%;float:left;margin-top:5px;margin-left:2%;}
+  .part7 .card1{border-radius: 10px;margin-left: 1%;margin-right: 5px;}
+  .part7 .card-text{color: #f65959;font-size: 18px;text-align: left;margin-left: 15px;width: 70%;}
+  .part7 .card-title{margin-bottom: 0;}
+  .part7 .pinbao {width: 40%;height: 35px;text-align: center;font-size:15px;color: white;margin-right: 3%;line-height: 20px;}
+  .part7 .btn{padding:5px 12px;border-radius: 20px;}
   .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .cardtil{text-align: left;font-size: 20px;padding:8px;}
+  .part7 .cardtil{text-align: left;font-size: 20px;padding:8px;}
   .yipin{display: block;font-size:13px;margin:8px 3px 15px 10px;float:left;border:1px solid #e88e1c;width:100%;border-radius:10px;}
-  .card-body{padding:0px;}
-  .jindutiao{width: 100%;background-color: #dddddd;height: 20px;line-height: 20px;border-radius: 20px;margin: 10px;color: white}
-  .skills {text-align: right;padding-right: 20px;line-height: 20px;}
-  .css1 {width: 50%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
-  .css2 {width: 55%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
-  .css3 {width: 60%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css4 {width: 65%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css5 {width: 70%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css6 {width: 75%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css7 {width: 80%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css8 {width: 85%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css9 {width: 90%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .css10 {width: 100%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .card-body{padding:0px;}
+  .part7 .jindutiao{width: 100%;background-color: #dddddd;height: 20px;line-height: 20px;border-radius: 20px;margin: 10px;color: white}
+  .part7 .skills {text-align: right;padding-right: 20px;line-height: 20px;}
+  .part7 .css1 {width: 50%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
+  .part7 .css2 {width: 55%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
+  .part7 .css3 {width: 60%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css4 {width: 65%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css5 {width: 70%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css6 {width: 75%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css7 {width: 80%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css8 {width: 85%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css9 {width: 90%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
+  .part7 .css10 {width: 100%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
 
 </style>

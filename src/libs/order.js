@@ -1,6 +1,6 @@
-import { cancelOrder, takeOrder, delOrder, payOrder } from "@api/order";
-import dialog from "@utils/dialog";
-import { pay } from "@libs/wechat";
+import { cancelOrder, takeOrder, delOrder, payOrder } from "../api/order";
+import dialog from "../utils/dialog";
+import { pay } from "../libs/wechat";
 import router from "../router";
 
 export function cancelOrderHandle(orderId) {
