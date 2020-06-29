@@ -154,7 +154,7 @@
   import debounce from "lodash.debounce";
 
   const CHECKED_IDS = "cart_checked";
-  
+
   export default {
     name:'',
     data(){

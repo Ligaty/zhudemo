@@ -20,9 +20,17 @@
               <div>{{peopleamount}}人</div>
             </div>
           </div>
+<!--          搜索框-->
           <router-link :to="'/search'">
-            <input type="text" class="form-control input-lg search " placeholder="输入商品名称搜索" >
+            <div class="input-group input-group-1">
+              <span class="outsearch">
+                <span style="width: 90%"><input type="text" class=" search " style="float:left;display: flex" placeholder="输入商品名称搜索" >
+                  <span class="glyphicon glyphicon-search searchkuang" style="width:10%"></span>
+                </span>
+              </span>
+            </div>
           </router-link>
+
         </div>
       </div>
 
@@ -82,7 +90,8 @@
         <div class="part7" >
           <div class="good1" v-for="(good,index) in info.bastList" @click="goDetail(good)" :key="index">
             <div class="card card1">
-              <img class="card-img-top "  :src="good.image" alt="Card image" style="width:100%;">
+              <span class="jiaobiao">拼宝</span>
+              <img class="card-img-top "  :src="good.image" alt="Card image" style="width:100%;position: relative;">
               <div class="card-body" >
                 <h4 class="card-title cardtil">{{good.store_name}}</h4>
                 <div style="display: flex">
@@ -274,7 +283,11 @@
   .part1 .accumulatted2{display: inline-block;float: left}
   .part1 .peopleamount{width:40px;height: 40px;margin-right: 3px;background: white;}
   .part1 .accumulatted3{display: inline-block;float: left;font-size:16px;color: white;}
-  .part1 .search{width:55%;border-radius: 25px;float: right;height:50px;padding-left:3%;font-size:18px;}
+  .part1 .search{width:80%;line-height: 45px;background: white;border-radius: 25px;float: right;padding-left:3%;font-size:18px;}
+  input::-webkit-input-placeholder{font-size: 16px;color: #939292;}
+  .part1 .input-group-1{width: 68%;}
+  .part1 .outsearch{width:90%;border:1px solid #f5f5f5;margin-left: 10%;background: white;border-radius: 25px;float: right;height:50px;padding-left:3%;font-size:18px;}
+  .part1 .searchkuang{color: #e0dada;font-size: 21px;line-height: 45px;width:10%;}
   .part2 .slideshow1{display:block;margin:0 auto;width:90%;max-width:90%;height:180px;border-radius: 15px;}
 
   .part3{width: 23%;display: inline-block;float: left;margin-left:5px;margin-top: 10px}
@@ -287,26 +300,26 @@
   .part7 {float: left;margin-top:10px;}
   .part7 .like1{font-size: 20px;font-weight: bold;margin-left: 5%;text-align: left;width: 100%;}
   .part7 .good1{width: 47%;float:left;margin-top:5px;margin-left:2%;}
-  .part7 .card1{border-radius: 10px;margin-left: 1%;margin-right: 5px;}
+  .part7 .card1{border-radius: 10px;margin-left: 1%;margin-right: 5px;position: relative}
   .part7 .card-text{color: #f65959;font-size: 18px;text-align: left;margin-left: 15px;width: 70%;}
   .part7 .card-title{margin-bottom: 0;}
-  .part7 .pinbao {width: 40%;height: 35px;text-align: center;font-size:15px;color: white;margin-right: 3%;line-height: 20px;}
+  .part7 .pinbao {width: 40%;height: 35px;text-align: center;font-size:16px;font-family:方正仿宋;color: white;margin-right: 3%;line-height: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
   .part7 .btn{padding:5px 12px;border-radius: 20px;}
   .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
   .part7 .cardtil{text-align: left;font-size: 20px;padding:8px;}
   .yipin{display: block;font-size:13px;margin:8px 3px 15px 10px;float:left;border:1px solid #e88e1c;width:100%;border-radius:10px;}
   .part7 .card-body{padding:0px;}
-  .part7 .jindutiao{width: 100%;background-color: #dddddd;height: 20px;line-height: 20px;border-radius: 20px;margin: 10px;color: white}
+  .part7 .jindutiao{width: 100%;background-color: #dddddd;height: 20px;line-height: 20px;border-radius: 20px;margin: 10px;color: white;}
   .part7 .skills {text-align: right;padding-right: 20px;line-height: 20px;}
-  .part7 .css1 {width: 50%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
-  .part7 .css2 {width: 55%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;}
-  .part7 .css3 {width: 60%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css4 {width: 65%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css5 {width: 70%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css6 {width: 75%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css7 {width: 80%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css8 {width: 85%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css9 {width: 90%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-  .part7 .css10 {width: 100%; background-color: #f18944;height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;}
-
+  .part7 .css1 {width: 50%; height: 20px;;line-height: 20px;border-radius: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css2 {width: 55%; height: 20px;;line-height: 20px;border-radius: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css3 {width: 60%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css4 {width: 65%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css5 {width: 70%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css6 {width: 75%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css7 {width: 80%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css8 {width: 85%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css9 {width: 90%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .css10 {width: 100%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
+  .part7 .jiaobiao{background-image: linear-gradient(to top right, #f608f0,#e87edb, #f36f0a);position: absolute;top:0;z-index:8;float:left;border-top-left-radius:10px;border-bottom-right-radius:10px;width:36%;height:35px;color:white;font-size:21px}
 </style>
