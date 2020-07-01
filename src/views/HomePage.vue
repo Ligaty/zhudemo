@@ -2,8 +2,8 @@
   <div id="demo">
     <!--头部导航栏-->
     <div class="head">
-      <span class="headleft" @click="onClickLeft"><van-icon name="arrow-left" /></span>
-      <span class="headmiddle" >猪猪乐社交商城</span>
+      <span class="headleft"  @click="onClickLeft"><van-icon name="arrow-left" /></span>
+      <span class="headmiddle" >订单列表</span>
       <span class="headright" @click="onClickRight"><van-icon name="ellipsis" /></span>
     </div>
 
@@ -14,13 +14,13 @@
       <div class="part1">
         <div class="accumulatted1">
           <div style="width:50%">
-            <div class="accumulatted2"><img :src="participationUrl" class="peopleamount"></div>
+            <div class="accumulatted2"><img v-lazy="participationUrl" class="peopleamount"></div>
             <div class="accumulatted3">
               <div>累计参与</div>
               <div>{{peopleamount}}人</div>
             </div>
           </div>
-<!--          搜索框-->
+          <!--          搜索框-->
           <router-link :to="'/search'">
             <div class="input-group input-group-1">
               <span class="outsearch">
@@ -44,45 +44,47 @@
       </div>
 
       <!--part3-->
-      <div>
-        <router-link
-          :to="menu.wap_url ? menu.wap_url : ''"
-          class="item"
-          v-for="(menu,index) in menus" :key="index"
-        >
+      <div style="width:100%;overflow: hidden;flex-wrap: wrap">
+
           <div class="part3" >
-            <img :src="menu.pic" style="width:70%">
-            <p style="text-align: center;font-size:16px;">{{menu.name}}</p>
+              <router-link :to="menu.wap_url ? menu.wap_url : ''" class="item" v-for="(menu,index) in menus.slice(0,4)" :key="index">
+                  <img v-lazy="menu.pic" style="width:60%">
+                  <p style="text-align: center;font-size:15px;margin-bottom: 3px;">{{menu.name}}</p>
+              </router-link>
           </div>
-        </router-link>
+
       </div>
 
       <!--part4-->
-      <div>
-        <div v-for="(part4,index) in parts4" :key="index">
-          <img :src="part4.imgUrl" class="part4">
+      <div style="overflow: hidden">
+        <div style="display: flex">
+          <div v-for="(part4,index) in parts4" :key="index" >
+            <img v-lazy="part4.imgUrl" class="part4">
+          </div>
         </div>
-        <div style="">
-          <img :src="imgUrl" class="part4_1">
-        </div>
+          <div style="">
+            <img v-lazy="imgUrl" class="part4_1">
+          </div>
+
       </div>
 
       <!--part5 精选品牌-->
       <div class="selected">
         <p class="selectedbrand">精选品牌</p>
         <div class="selectedcontent"  v-for="(fastList,index) in info.fastList" :key="index">
-          <img :src="fastList.pic" style="width:100%;border-radius: 8px;margin:7px 0;">
+          <img v-lazy="fastList.pic" style="width:100%;border-radius: 8px;margin:7px 0;">
           <p style="text-align: center;font-size:16px;">{{fastList.cate_name}}</p>
         </div>
       </div>
 
       <!--part6-->
       <div style="">
-        <img :src="imgUrl" class="part6">
+        <img v-lazy="imgUrl" class="part6">
       </div>
       <div style="">
-        <img :src="imgUrl" class="part6">
+        <img v-lazy="imgUrl" class="part6">
       </div>
+
 
       <!--part7-->
       <div class="part7">
@@ -91,7 +93,7 @@
           <div class="good1" v-for="(good,index) in info.bastList" @click="goDetail(good)" :key="index">
             <div class="card card1">
               <span class="jiaobiao">拼宝</span>
-              <img class="card-img-top "  :src="good.image" alt="Card image" style="width:100%;position: relative;">
+              <img class="card-img-top "  v-lazy="good.image" alt="Card image" style="width:100%;position: relative;">
               <div class="card-body" >
                 <h4 class="card-title cardtil">{{good.store_name}}</h4>
                 <div style="display: flex">
@@ -161,14 +163,12 @@
       </div>
 
 
-
-
       <div class="blank">-----------我是有底线的-----------</div>
 
     </div>
 
     <!--底部导航栏-->
-    <div id="footer" class="acea-row row-middle" style="margin-left: -10px;">
+    <div id="footer" class="acea-row row-middle" >
       <router-link
         :to="item.url"
         class="item"
@@ -183,6 +183,7 @@
         <div>{{ item.name }}</div>
       </router-link>
     </div>
+
 
   </div>
 </template>
@@ -259,11 +260,11 @@
     mounted:function() {
       let that = this;
       getHomeData().then(response=>{
-          that.$set(that,"banner", response.data.banner);
-          that.$set(that, "menus", response.data.menus);
-          that.$set(that, "info", response.data.info);
+        that.$set(that,"banner", response.data.banner);
+        that.$set(that, "menus", response.data.menus);
+        that.$set(that, "info", response.data.info);
 
-        })
+      })
         .catch(function (error) {
           alert("请求失败")
         })
@@ -281,24 +282,24 @@
   .part1{display: flex;background: #ff3131;height: 180px;background-image: linear-gradient(to right, #fa4209, #fa7e58, #ff5f36);position: relative;margin-bottom: -15%;}
   .part1 .accumulatted1{margin:10% 5%;height: 80px;width:100%;}
   .part1 .accumulatted2{display: inline-block;float: left}
-  .part1 .peopleamount{width:40px;height: 40px;margin-right: 3px;background: white;}
-  .part1 .accumulatted3{display: inline-block;float: left;font-size:16px;color: white;}
-  .part1 .search{width:80%;line-height: 45px;background: white;border-radius: 25px;float: right;padding-left:3%;font-size:18px;}
-  input::-webkit-input-placeholder{font-size: 16px;color: #939292;}
-  .part1 .input-group-1{width: 68%;}
-  .part1 .outsearch{width:90%;border:1px solid #f5f5f5;margin-left: 10%;background: white;border-radius: 25px;float: right;height:50px;padding-left:3%;font-size:18px;}
-  .part1 .searchkuang{color: #e0dada;font-size: 21px;line-height: 45px;width:10%;}
+  .part1 .peopleamount{width:35px;height: 35px;margin-right: 3px;background: white;}
+  .part1 .accumulatted3{display: inline-block;float: left;font-size:14px;color: white;}
+  input::-webkit-input-placeholder{font-size: 15px;color: #939292;}
+  .part1 .input-group-1{width: 67%;}
+  .part1 .outsearch{width:85%;border:1px solid #f5f5f5;margin-left: 10%;background: white;border-radius: 25px;float: right;height:45px;padding-left:3%;font-size:16px;}
+  .part1 .search{width:80%;line-height: 40px;background: white;border-radius: 25px;float: right;padding-left:3%;font-size:18px;}
+  .part1 .searchkuang{color: #e0dada;font-size: 20px;line-height: 45px;width:10%;}
   .part2 .slideshow1{display:block;margin:0 auto;width:90%;max-width:90%;height:180px;border-radius: 15px;}
-
-  .part3{width: 23%;display: inline-block;float: left;margin-left:5px;margin-top: 10px}
-  .part4{width: 47%;display: inline-block;float: left;margin-left:7px;border-radius: 25px;}
+  .part2{background: none;}
+  .part3{width: 100%;text-align: center;display: flex;float: left;margin-top: 10px;padding:5px;}
+  .part4{width: 92%;display: inline-block;float: left;margin-left:7px;border-radius: 25px;background:none}
   .part4_1{-webkit-justify-content:center;width: 96%;height:140px;display: inline-block;float: left;border-radius: 10px;margin-top: 10px;margin-left: 2%}
   .selected{width: 96%;background-color: antiquewhite;border-radius: 5px;margin-left: 2%;float: left;margin-top:10px;padding: 5px}
   .selectedbrand{text-align: center;font-size: 22px;margin:10px 0;font-weight: bolder}
   .selectedcontent{width: 23%;display: inline-block;float: left;margin-left:5px;}
   .part6{-webkit-justify-content:center;width: 96%;height:140px;display: inline-block;float: left;border-radius: 10px;margin-top: 10px;margin-left: 2%}
   .part7 {float: left;margin-top:10px;}
-  .part7 .like1{font-size: 20px;font-weight: bold;margin-left: 5%;text-align: left;width: 100%;}
+  .part7 .like1{font-size: 20px;width: 95%;font-weight: bold;margin-left: 5%;text-align: left;}
   .part7 .good1{width: 47%;float:left;margin-top:5px;margin-left:2%;}
   .part7 .card1{border-radius: 10px;margin-left: 1%;margin-right: 5px;position: relative}
   .part7 .card-text{color: #f65959;font-size: 18px;text-align: left;margin-left: 15px;width: 70%;}

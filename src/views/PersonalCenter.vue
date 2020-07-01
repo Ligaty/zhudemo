@@ -20,7 +20,7 @@
               </div>
             </van-col>
             <van-col span="2">
-              <div><img :src="headportrait" class="headportrait">
+              <div><img v-lazy="headportrait" class="headportrait">
               </div>
             </van-col>
           </van-row>
@@ -28,39 +28,40 @@
       </div>
 
 <!--      part 2-->
-      <div style="background: white;margin:10px 10px;border-radius: 10px;z-index:999">
+      <div class="part2" style="margin-top:25px;">
 <!--        part 2_1我的拼宝-->
         <div style="padding:7px 0">
-          <div style="margin-left:30px;display: flex;">
-            <div style="text-align: left;font-size: 22px;font-weight: bolder;font-family: 楷体">我的拼宝</div>
-            <div style="font-size:17px;color:#a19f9f;margin-left: 150px;margin-top:6px;">全部拼宝 ></div>
+          <div class="part2_1">
+            <div class="mypinbao">我的拼宝</div>
+            <div class="allpinbao">全部拼宝 ></div>
           </div>
 
           <hr style="margin-bottom: 10px;margin-top: 5px;"/>
+
 <!--      part 2_2 图  -->
-          <div style="display: flex;text-align: center;margin-left: 10px;">
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
-                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  style="width: 100%;"></div>
-                <div style="font-size: 20px;text-align: center;font-family: 楷体;">拼宝中</div>
+          <div class="part2_2">
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
+                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  class="pinimg"></div>
+                <div class="pintext">拼宝中</div>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
-                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  style="width: 100%;"></div>
-                <div style="font-size: 20px;text-align: center;font-family: 楷体;">已开奖</div>
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
+                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  class="pinimg"></div>
+                <div class="pintext">已开奖</div>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
-                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  style="width: 100%;"></div>
-                <div style="font-size: 20px;text-align: center;font-family: 楷体;">待收货</div>
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
+                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  class="pinimg"></div>
+                <div class="pintext">待收货</div>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
-                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  style="width: 100%;"></div>
-                <div style="font-size: 20px;text-align: center;font-family: 楷体;">已收货</div>
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
+                <div><img src="https://i.loli.net/2020/06/05/1SnCuO7azoFqglB.jpg"  class="pinimg"></div>
+                <div class="pintext">已收货</div>
               </div>
             </div>
           </div>
@@ -70,48 +71,48 @@
 
 
       <!--      part 3-->
-      <div style="background: white;margin:10px 10px;border-radius: 10px;" >
+      <div class="part2" >
         <!--        part 3_1我的订单-->
         <div style="padding:7px 0">
           <div style="margin-left:30px;display: flex;">
-            <div style="text-align: left;font-size: 22px;font-weight: bolder;font-family: 楷体">我的订单</div>
-            <router-link :to="'/order/list/'" class="allOrder">
-              <div style="font-size:17px;color:#a19f9f;margin-left: 150px;margin-top:6px;">全部订单 ></div>
+            <div class="mypinbao">我的订单</div>
+            <router-link :to="'/order/list/'" class="allpinbao">
+              <div class="">全部订单 ></div>
             </router-link>
           </div>
 
           <hr style="margin-bottom: 10px;margin-top: 5px;"/>
           <!--      part 3_2 图  -->
-          <div style="display: flex;text-align: center;margin-left: 10px;">
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
+          <div class="part2_2">
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
                 <router-link :to="{ path: '/order/list/' + 0 }" class="item">
-                  <div><img src="../assets/images/dfk.png"  style="width: 80%;margin:10px 0 7px 10%"></div>
-                  <div style="font-size: 20px;text-align: center;font-family: 楷体;">待付款</div>
+                  <div><img src="../assets/images/dfk.png"  class="pinimg2"></div>
+                  <div class="pintext">待付款</div>
                 </router-link>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
                 <router-link :to="{ path: '/order/list/' + 1 }" class="item">
-                  <div><img src="../assets/images/dfh.png"  style="width: 80%;margin:10px 0 7px 10%"></div>
-                  <div style="font-size: 20px;text-align: center;font-family: 楷体;">待发货</div>
+                  <div><img src="../assets/images/dfh.png"  class="pinimg2"></div>
+                  <div class="pintext">待发货</div>
                 </router-link>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
                 <router-link :to="{ path: '/order/list/' + 2 }" class="item">
-                  <div><img src="../assets/images/dsh.png"  style="width: 80%;margin:10px 0 7px 10%"></div>
-                  <div style="font-size: 20px;text-align: center;font-family: 楷体;">待收货</div>
+                  <div><img src="../assets/images/dsh.png"  class="pinimg2"></div>
+                  <div class="pintext">待收货</div>
                 </router-link>
               </div>
             </div>
-            <div style="display:flex;width: 23%">
-              <div style="text-align: left;padding-left: 15px;">
+            <div class="mypinbao_1">
+              <div class="mypinbao_2">
                 <router-link :to="'/order/refund_list'" class="item">
-                  <div><img src="../assets/images/sh.png"  style="width: 80%;margin:10px 0 3px 10%"></div>
-                  <div style="font-size: 16px;text-align: center;font-family: 楷体;">售后/退款</div>
+                  <div><img src="../assets/images/sh.png"  class="pinimg2"></div>
+                  <div class="pintext" style="font-size: 14px;width:110%">售后/退款</div>
                 </router-link>
               </div>
             </div>
@@ -122,18 +123,18 @@
 
 
       <!--      part 4-->
-      <div style="background: white;margin:10px 10px;border-radius: 10px;" >
+      <div class="part4" style="width:95%">
         <!--        part 4_1常用工具-->
         <div style="padding:7px 0">
-          <div style="margin-left:30px;display: flex;">
-            <div style="text-align: left;font-size: 22px;font-weight: bolder;font-family: 楷体">常用工具</div>
+          <div style="display: flex;">
+            <div class="mypinbao">常用工具</div>
           </div>
 
           <hr style="margin-bottom: 10px;margin-top: 5px;"/>
 
           <!--      part 4_2 图  -->
           <div style="display: flex;flex-wrap: wrap">
-            <div v-for="(item, index) in MyMenus" style="width:25%;">
+            <div v-for="(item, index) in MyMenus" style="width:25%;padding:10px;">
               <div
                 class="item"
                 :key="index"
@@ -141,9 +142,9 @@
                 v-if="item.wap_url"
               >
                 <div style="display:block;width: 100%" >
-                  <div style="text-align: left;padding-left: 15px;">
-                    <div><img :src="item.pic"  style="width: 50%;text-align: center;margin:5px 0 5px 25%;"></div>
-                    <div style="font-size: 20px;text-align: center;font-family: 楷体;">{{ item.name }}</div>
+                  <div style="text-align: left;">
+                    <div><img v-lazy="item.pic"  style="width: 50%;text-align: center;margin:5px 0 5px 25%;"></div>
+                    <div class="pintext">{{ item.name }}</div>
                   </div>
                 </div>
               </div>
@@ -242,30 +243,54 @@
         }
         this.$router.push({ path: this.MyMenus[index].wap_url });
       },
+      is_weixin() {
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+          localStorage.setItem('is_weixin', '1');
+          console.log("isweixin")
+        } else {
+          localStorage.setItem('is_weixin', '0');
+          console.log("isn't weixin")
+        }
+      }
+
     },
     mounted() {
       let that = this;
+      this.is_weixin();
       getMenuUser().then(res => {
         that.MyMenus = res.data.routine_my_menus;
         console.log(that.MyMenus)
       });
-      getUser().then(res => {
-        that.userInfo = res.data
-      })
+
     }
   }
 </script>
 
 <style>
   body{background: #f5f5f5;}
-  .head{font-weight: bold;background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979); padding-top: 20px;padding-bottom: 20px;}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;}
-  .head .headmiddle{font-size:20px}
+  .head{background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979); padding-top: 20px;padding-bottom: 20px;color: white}
+  .head .headleft{float:left;margin-left:15px;font-size:20px;color: white}
+  .head .headmiddle{font-size:20px;color: white}
   .head .headright{float:right;margin-right:15px;font-size:20px}
   .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .part1{display: flex;background: #ff3131;height: 160px;z-index:0;background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979);position:relative;}
-  .part1 .toubu{text-align: left;padding:60px 40px;font-size: 18px;color:#ffffff}
-  .part1 .name{font-size: 20px;}
-  .part1 .time{font-size: 16px;margin-top:8px;}
-  .part1 .headportrait{width: 80px;border-radius: 50px;margin-top:46px;border:solid 4px white}
+  .part1{display: flex;background: #ff3131;height: 140px;z-index:0;background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979);position:relative;}
+  .part1 .toubu{text-align: left;padding:40px 40px;font-size: 16px;color:#ffffff}
+  .part1 .name{font-size: 16px;}
+  .part1 .time{font-size: 14px;margin-top:8px;}
+  .part1 .headportrait{width: 70px;border-radius: 50px;margin-top:35px;border:solid 4px white}
+  .part2{background: white;margin:10px 10px;border-radius: 10px;z-index:999}
+  .part2 .part2_1{margin-left:30px;display: flex;}
+  .part2 .mypinbao{text-align: left;font-size: 0.36rem;font-weight: bolder;font-family: 新宋体;width:40%}
+  .part2 .allpinbao{font-size:15px;color:#a19f9f;margin-left: 30%;margin-top:6px;}
+  .part2 .part2_2{display: flex;text-align: center;margin-left: 10px;}
+  .part2 .mypinbao_1{display:flex;width: 23%}
+  .part2 .mypinbao_2{text-align: left;padding-left: 15px;}
+  .part2 .pinimg{width: 100%;}
+  .part2 .pintext{font-size: 15px;text-align: center;font-family: 新宋体;margin-top:3px;color: #6a6c6d}
+  .part2 .pinimg2{width: 100%;padding:9px;}
+  .part4{background: white;margin:10px 10px;border-radius: 10px;}
+  .part4 .mypinbao{text-align: left;font-size: 0.36rem;font-weight: bolder;font-family: 新宋体;width:40%;margin-left: 10%}
+  .part4 .pintext{font-size: 15px;text-align: center;font-family: 新宋体;margin-top:3px;color: #6a6c6d}
+
 </style>

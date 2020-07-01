@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import test from '@/components/test'
 import {Lazyload} from 'vant'
 import PinBao from '@/components/pinbao'
-import HomePage from "@/components/HomePage";
+import HomePage from "@/views/HomePage";
 import Home from "@/views/Home";
 import detail from "@/components/detail";
 import MenuList from "@/views/MenuList"
@@ -24,6 +24,7 @@ import NotDefined from "@/views/NotDefined";
 import $store from "../store";
 import toLogin from "@/libs/login";
 import Loading from "@/views/Loading";
+import muban from "@/components/muban"
 
 
 
@@ -33,15 +34,11 @@ Vue.use(Lazyload)
 
 export default new Router({
   routes: [
+
     {
       path: '/',
       name: 'HomePage',
       component: HomePage
-    },
-    {
-      path: '/Home',
-      name: 'Home',
-      component: Home
     },
     {
       path: '/bnavigation',
@@ -62,6 +59,11 @@ export default new Router({
       path: '/MenuList',
       name: 'MenuList',
       component: MenuList
+    },
+    {
+      path: '/muban',
+      name: 'muban',
+      component: muban
     },
     {
       path: '/Involved',
