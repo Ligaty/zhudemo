@@ -130,7 +130,7 @@
             <div class="mypinbao">常用工具</div>
           </div>
 
-          <hr style="margin-bottom: 10px;margin-top: 5px;"/>
+          <hr style="margin-top: 5px;"/>
 
           <!--      part 4_2 图  -->
           <div style="display: flex;flex-wrap: wrap">
@@ -139,7 +139,7 @@
                 class="item"
                 :key="index"
                 @click="goPages(index)"
-                v-if="item.wap_url"
+                v-if="item.wap_url"   style="padding-right: 0px"
               >
                 <div style="display:block;width: 100%" >
                   <div style="text-align: left;">
@@ -276,8 +276,8 @@
   .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
   .part1{display: flex;background: #ff3131;height: 140px;z-index:0;background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979);position:relative;}
   .part1 .toubu{text-align: left;padding:40px 40px;font-size: 16px;color:#ffffff}
-  .part1 .name{font-size: 16px;}
-  .part1 .time{font-size: 14px;margin-top:8px;}
+  .part1 .name{font-size: 18px;}
+  .part1 .time{font-size: 16px;margin-top:8px;}
   .part1 .headportrait{width: 70px;border-radius: 50px;margin-top:35px;border:solid 4px white}
   .part2{background: white;margin:10px 10px;border-radius: 10px;z-index:999}
   .part2 .part2_1{margin-left:30px;display: flex;}

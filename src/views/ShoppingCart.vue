@@ -20,82 +20,103 @@
       <div v-if="cartList.valid.length > 0 || cartList.invalid.length > 0" v-for="(item, index) in cartList.valid"
            :key="index">
 
+
       <div v-if="cartList.valid.length > 0">
         <div >
           <div class="tianchong"></div>
-          <mt-cell-swipe :right="[{content:'删除',
-                       style:{background:'red',color:'#fff'},
-                       handler:()=>del(index)}]">
-            <div>
-              <div class="item">
-                <div class="shopDetails">
-
-                  <img  :src="item.productInfo.attrInfo.image" @click="$router.push({ path: '/detail/' + item.product_id })" v-if="item.productInfo.attrInfo"/>
-                  <img :src="item.productInfo.image" v-else />
-                  <div class="detailList">
-                    <span class="detailName" @click="$router.push({ path: '/detail/' + item.product_id })">{{ item.productInfo.store_name }}</span>
-                    <div class="listmore">{{ item.productInfo.attrInfo.suk }}</div>
-                    <div class="shopprice">
-                      <span class="listprice">￥{{ item.truePrice }}</span>
-                      <span class="shopNum">
-                        <div class="carnum acea-row row-center-wrapper">
-                          <div
-                            class="reduce"
-                            :class="cartList.valid[index].cart_num <= 1 ? 'on' : ''"
-                            @click.prevent="reduce(index)"
-                          >
-                            -
-                          </div>
-                          <div class="num">
-                            <input
-                              type="number"
-                              v-model="item.cart_num"
-                              class="ipt_num"
-                              @input.prevent="specifiName(index)"
-                              @blur.prevent="blurName(index)"
-                            />
-                          </div>
-                          <div
-                            class="plus"
-                            v-if="cartList.valid[index].attrInfo"
-                            :class="
-                              cartList.valid[index].cart_num >=
-                              cartList.valid[index].attrInfo.stock
-                                ? 'on'
-                                : ''
-                            "
-                            @click.prevent="plus(index)"
-                          >
-                            +
-                          </div>
-                          <div
-                            class="plus"
-                            v-else
-                            :class="
-                              cartList.valid[index].cart_num >= cartList.valid[index].stock
-                                ? 'on'
-                                : ''
-                            "
-                            @click.prevent="plus(index)"
-                          >
-                            +
-                          </div>
-                        </div>
-                      </span>
-                    </div>
-                  </div>
-
-                </div>
+          <div style="display: flex">
+<!--            选择按钮-->
+            <div class="select-btn" style="width:3%;line-height: 150px;margin-left:2%">
+              <div class="checkbox-wrapper">
+                <label class="well-check">
+                  <input
+                    type="checkbox"
+                    name=""
+                    value=""
+                    :checked="item.checked"
+                    @click="switchSelect(index)"
+                  />
+                  <i class="icon"></i>
+                </label>
               </div>
             </div>
-          </mt-cell-swipe>
+<!--            购物车商品信息-->
+            <div style="width: 93%;margin-left: 2%">
+              <mt-cell-swipe :right="[{content:'删除',
+                         style:{background:'red',color:'#fff'},
+                           handler:()=>delgoods(index)}]">
+                <div>
+                  <div class="">
+                    <div class="shopDetails">
+
+                      <img  :src="item.productInfo.attrInfo.image" @click="$router.push({ path: '/detail/' + item.product_id })" v-if="item.productInfo.attrInfo"/>
+                      <img :src="item.productInfo.image" v-else />
+                      <div class="detailList">
+                        <span class="detailName" @click="$router.push({ path: '/detail/' + item.product_id })">{{ item.productInfo.store_name }}</span>
+                        <div class="listmore">{{ item.productInfo.attrInfo.suk }}</div>
+                        <div class="shopprice">
+                          <div class="listprice">￥{{ item.truePrice }}</div>
+                          <div class="shopNum">
+                            <div class="carnum acea-row row-center-wrapper">
+                              <div
+                                class="reduce"
+                                :class="cartList.valid[index].cart_num <= 1 ? 'on' : ''"
+                                @click.prevent="reduce(index)"
+                              >
+                                -
+                              </div>
+                              <div class="num">
+                                <input
+                                  type="number"
+                                  v-model="item.cart_num"
+                                  class="ipt_num"
+                                  @input.prevent="specifiName(index)"
+                                  @blur.prevent="blurName(index)"
+                                />
+                              </div>
+                              <div
+                                class="plus"
+                                v-if="cartList.valid[index].attrInfo"
+                                :class="
+                                  cartList.valid[index].cart_num >=
+                                  cartList.valid[index].attrInfo.stock
+                                    ? 'on'
+                                    : ''
+                                "
+                                @click.prevent="plus(index)"
+                              >
+                                +
+                              </div>
+                              <div
+                                class="plus"
+                                v-else
+                                :class="
+                                  cartList.valid[index].cart_num >= cartList.valid[index].stock
+                                    ? 'on'
+                                    : ''
+                                "
+                                @click.prevent="plus(index)"
+                              >
+                                +
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </mt-cell-swipe>
+            </div>
+        </div>
         </div>
       </div>
       <div v-else>
         <van-empty description="您的购物车还是空的" style="height: 350px"/>
         <button type="button" class="btn btn-warning" style="margin-bottom: 100px;">去逛逛</button>
       </div>
-      <div class="tianchong"></div>
+
 
 <!--      <mt-cell-swipe :right="[{content:'select',-->
 <!--                     style:{background:'red',color:'#fff'},-->
@@ -103,11 +124,12 @@
 <!--      </mt-cell-swipe>-->
 
       </div>
+      <div style="background: #f5f5f5;height:150px;"></div>
 
 <!--      购物车底部付款-->
       <div class="footer">
         <div class="foot-left">
-          <div class="foot-left1">已选(1)</div>
+          <div class="foot-left1">已选({{ cartCount }})</div>
           <div class="foot-left2">合计
             <span>￥{{ countmoney }}</span>
           </div>
@@ -115,7 +137,7 @@
         <div class="footer-right" @click="placeOrder">去结算</div>
       </div>
 
-      <div class="blank">-----------我是有底线的-----------</div>
+
 
     </div>
 
@@ -473,7 +495,7 @@
   .container{
     background: #fff;padding:0;margin-bottom: 10px;
   }
-  .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+  .head{font-weight: bold;background-color: #efefef; padding-top: 20px;padding-bottom: 20px;}
   .head .headleft{float:left;margin-left:15px;font-size:20px;}
   .head .headmiddle{font-size:20px}
   .head .headright{float:right;margin-right:15px;font-size:20px}
@@ -530,12 +552,14 @@
   .tianchong{height: 15px;background: #efefef;z-index:997;width: 100%}
   .item{padding-right:20px;z-index:998;margin-bottom: 12px;}
   .shopDetails{background:#fff;display: flex;text-align: left;padding-top:18px;line-height: 30px;}
-  .shopDetails img{width:100px;margin-right: 3%}
-  .detailName{font-size: 19px;font-weight: bold;}
-  .listmore{color: #e5e1e1}
-  .shopprice{margin-top:10px;}
-  .listprice{font-size: 19px;font-weight: bold;}
-  .shopNum{text-align: right;margin-left: 40px;}
+  .shopDetails img{width:100px;margin-right: 3%;height:130px;}
+  .detailName{font-size: 19px;font-weight: bold;color: #444343;
+  }
+  .listmore{color: #504f4f
+  }
+  .shopprice{margin-top:10px;display: flex}
+  .listprice{font-size: 19px;width: 50%;color: #504f4f}
+  .shopNum{text-align: right;margin-left: 40px;width: 50%}
   .shopNum button{width: 31px;height: 28px;text-align:center;background: #e0e0e0;color: #58595b;border:none;outline: none;}
   .shopNum input{width:37px;height: 25px;border:none;text-align: center;outline: none;}
   .mint-cell-swipe-button{line-height: 180px;}
