@@ -1,5 +1,5 @@
 <template>
-  <div id="demo">
+  <div id="demo" class="homepage">
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft"  @click="onClickLeft"><van-icon name="arrow-left" /></span>
@@ -55,7 +55,7 @@
 
       </div>
 
-      <!--part4-->
+      <!---->
       <div style="overflow: hidden">
         <div style="display: flex">
           <div v-for="(part4,index) in parts4" :key="index" >
@@ -273,54 +273,4 @@
   //  http://ggl.zscoupon.com/public_api/index
 </script>
 
-<style>
-  .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;background-image: linear-gradient(to right, #fa4209, #fa7e58, #ff5f36);color: white;font-family: 幼圆;}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;}
-  .head .headmiddle{font-size:22px}
-  .head .headright{float:right;margin-right:15px;font-size:20px}
 
-  .part1{display: flex;background: #ff3131;height: 180px;background-image: linear-gradient(to right, #fa4209, #fa7e58, #ff5f36);position: relative;margin-bottom: -15%;}
-  .part1 .accumulatted1{margin:10% 5%;height: 80px;width:100%;}
-  .part1 .accumulatted2{display: inline-block;float: left}
-  .part1 .peopleamount{width:35px;height: 35px;margin-right: 3px;background: white;}
-  .part1 .accumulatted3{display: inline-block;float: left;font-size:14px;color: white;}
-  input::-webkit-input-placeholder{font-size: 15px;color: #939292;}
-  .part1 .input-group-1{width: 67%;}
-  .part1 .outsearch{width:85%;border:1px solid #f5f5f5;margin-left: 10%;background: white;border-radius: 25px;float: right;height:45px;padding-left:3%;font-size:16px;}
-  .part1 .search{width:80%;line-height: 40px;background: white;border-radius: 25px;float: right;padding-left:3%;font-size:18px;}
-  .part1 .searchkuang{color: #e0dada;font-size: 20px;line-height: 45px;width:10%;}
-  .part2 .slideshow1{display:block;margin:0 auto;width:90%;max-width:90%;height:180px;border-radius: 15px;}
-  .part2{background: none;}
-  .part3{width: 100%;text-align: center;display: flex;float: left;margin-top: 10px;padding:5px;}
-  .part4{width: 92%;display: inline-block;float: left;margin-left:7px;border-radius: 25px;background:none}
-  .part4_1{-webkit-justify-content:center;width: 96%;height:140px;display: inline-block;float: left;border-radius: 10px;margin-top: 10px;margin-left: 2%}
-  .selected{width: 96%;background-color: antiquewhite;border-radius: 5px;margin-left: 2%;float: left;margin-top:10px;padding: 5px}
-  .selectedbrand{text-align: center;font-size: 22px;margin:10px 0;font-weight: bolder}
-  .selectedcontent{width: 23%;display: inline-block;float: left;margin-left:5px;}
-  .part6{-webkit-justify-content:center;width: 96%;height:140px;display: inline-block;float: left;border-radius: 10px;margin-top: 10px;margin-left: 2%}
-  .part7 {float: left;margin-top:10px;}
-  .part7 .like1{font-size: 20px;width: 95%;font-weight: bold;margin-left: 5%;text-align: left;}
-  .part7 .good1{width: 47%;float:left;margin-top:5px;margin-left:2%;}
-  .part7 .card1{border-radius: 10px;margin-left: 1%;margin-right: 5px;position: relative}
-  .part7 .card-text{color: #f65959;font-size: 18px;text-align: left;margin-left: 15px;width: 70%;}
-  .part7 .card-title{margin-bottom: 0;}
-  .part7 .pinbao {width: 40%;height: 35px;text-align: center;font-size:16px;font-family:方正仿宋;color: white;margin-right: 3%;line-height: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .btn{padding:5px 12px;border-radius: 20px;}
-  .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .part7 .cardtil{text-align: left;font-size: 20px;padding:8px;}
-  .yipin{display: block;font-size:13px;margin:8px 3px 15px 10px;float:left;border:1px solid #e88e1c;width:100%;border-radius:10px;}
-  .part7 .card-body{padding:0px;}
-  .part7 .jindutiao{width: 100%;background-color: #dddddd;height: 20px;line-height: 20px;border-radius: 20px;margin: 10px;color: white;}
-  .part7 .skills {text-align: right;padding-right: 20px;line-height: 20px;}
-  .part7 .css1 {width: 50%; height: 20px;;line-height: 20px;border-radius: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css2 {width: 55%; height: 20px;;line-height: 20px;border-radius: 20px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css3 {width: 60%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css4 {width: 65%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css5 {width: 70%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css6 {width: 75%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css7 {width: 80%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css8 {width: 85%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css9 {width: 90%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .css10 {width: 100%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
-  .part7 .jiaobiao{background-image: linear-gradient(to top right, #f608f0,#e87edb, #f36f0a);position: absolute;top:0;z-index:8;float:left;border-top-left-radius:10px;border-bottom-right-radius:10px;width:36%;height:35px;color:white;font-size:21px}
-</style>

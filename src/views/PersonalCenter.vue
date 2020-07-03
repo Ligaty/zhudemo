@@ -1,5 +1,5 @@
 <template>
-  <div id="demo">
+  <div id="demo" class="PersonalCenter">
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft"  @click="onClickLeft"><van-icon name="arrow-left" /></span>
@@ -269,28 +269,5 @@
 
 <style>
   body{background: #f5f5f5;}
-  .head{background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979); padding-top: 20px;padding-bottom: 20px;color: white}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;color: white}
-  .head .headmiddle{font-size:20px;color: white}
-  .head .headright{float:right;margin-right:15px;font-size:20px}
-  .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .part1{display: flex;background: #ff3131;height: 140px;z-index:0;background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979);position:relative;}
-  .part1 .toubu{text-align: left;padding:40px 40px;font-size: 16px;color:#ffffff}
-  .part1 .name{font-size: 18px;}
-  .part1 .time{font-size: 16px;margin-top:8px;}
-  .part1 .headportrait{width: 70px;border-radius: 50px;margin-top:35px;border:solid 4px white}
-  .part2{background: white;margin:10px 10px;border-radius: 10px;z-index:999}
-  .part2 .part2_1{margin-left:30px;display: flex;}
-  .part2 .mypinbao{text-align: left;font-size: 0.36rem;font-weight: bolder;font-family: 新宋体;width:40%}
-  .part2 .allpinbao{font-size:15px;color:#a19f9f;margin-left: 30%;margin-top:6px;}
-  .part2 .part2_2{display: flex;text-align: center;margin-left: 10px;}
-  .part2 .mypinbao_1{display:flex;width: 23%}
-  .part2 .mypinbao_2{text-align: left;padding-left: 15px;}
-  .part2 .pinimg{width: 100%;}
-  .part2 .pintext{font-size: 15px;text-align: center;font-family: 新宋体;margin-top:3px;color: #6a6c6d}
-  .part2 .pinimg2{width: 100%;padding:9px;}
-  .part4{background: white;margin:10px 10px;border-radius: 10px;}
-  .part4 .mypinbao{text-align: left;font-size: 0.36rem;font-weight: bolder;font-family: 新宋体;width:40%;margin-left: 10%}
-  .part4 .pintext{font-size: 15px;text-align: center;font-family: 新宋体;margin-top:3px;color: #6a6c6d}
 
 </style>

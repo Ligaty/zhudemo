@@ -1,5 +1,5 @@
 <template>
-  <div id="demo">
+  <div id="demo" class="AddressManage">
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft" @click="onClickLeft"><van-icon name="arrow-left" /></span>
@@ -74,17 +74,4 @@
 </script>
 
 <style>
-  .addresscard{text-align: left;padding:30px;font-size:20px;display:flex;background: white}
-  .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;}
-  .head .headmiddle{font-size:20px}
-  .head .headright{float:right;margin-right:15px;font-size:20px}
-  .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  body{background: #f5f5f5;}
-  .addresscard .phoneNum{margin-letf:20px;}
-  .addresscard .arrow{line-height: 60px;margin-left: 13%;width:10%;}
-  .addresscard .addresscardleft{width:80%}
-  .addresscard .address{color: #c1bfbf;font-size:18px;margin-top:10px;}
-  .tianchong{height: 15px;background: #f5f5f5;z-index:997;width: 100%}
-  .addinfo{background: orangered;color: white;height: 70px;line-height: 70px;font-size:20px;position: fixed;bottom:50px;width: 100%}
 </style>

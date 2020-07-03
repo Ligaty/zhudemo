@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import test from '@/components/test'
 import {Lazyload} from 'vant'
-import PinBao from '@/components/pinbao'
+import PinBao from '@/views/pinbao'
 import HomePage from "@/views/HomePage";
 import Home from "@/views/Home";
-import detail from "@/components/detail";
+import detail from "@/views/detail";
 import MenuList from "@/views/MenuList"
 import bnavigation from "@/components/bnavigation"
 import Involved from "@/views/Involved"
@@ -14,7 +13,7 @@ import ShoppingCart from "@/views/ShoppingCart"
 import AddressManage from "@/views/AddressManage";
 import AddAddress from "@/views/AddAddress";
 import PersonalCenter from "@/views/PersonalCenter";
-import MyOrder from "@/views/order/MyOrder";
+import MyOrder from "@/views/MyOrder";
 import module from "./module";
 import Index from "@/views/home/Index";
 import Search from "@/views/shop/GoodSearch";
@@ -25,7 +24,10 @@ import $store from "../store";
 import toLogin from "@/libs/login";
 import Loading from "@/views/Loading";
 import muban from "@/components/muban"
-
+import MyGbi from "@/views/MyGbi";
+import nReCharge from "@/views/nReCharge";
+import ConfirmOrder from "@/views/ConfirmOrder";
+import OrderDetail from "@/views/OrderDetail";
 
 
 
@@ -94,6 +96,26 @@ export default new Router({
       path: '/MyOrder',
       name: 'MyOrder',
       component: MyOrder
+    },
+    {
+      path: '/MyGbi',
+      name: 'MyGbi',
+      component: MyGbi
+    },
+    {
+      path: '/nReCharge',
+      name: 'nReCharge',
+      component: nReCharge
+    },
+    {
+      path: '/ConfirmOrder',
+      name: 'ConfirmOrder',
+      component: ConfirmOrder
+    },
+    {
+      path: '/OrderDetail',
+      name: 'OrderDetail',
+      component: OrderDetail
     },
     {
       path: "/customer/chat/:id/:productId?",

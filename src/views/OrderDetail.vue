@@ -3,33 +3,21 @@
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft"  @click="onClickLeft"><van-icon name="arrow-left" /></span>
-      <span class="headmiddle" >订单列表</span>
+      <span class="headmiddle" >订单详情</span>
       <span class="headright" @click="onClickRight"><van-icon name="ellipsis" /></span>
     </div>
 
     <!--内容-->
     <div>
 
-      <div class="blank">-----------我是有底线的-----------</div>
+<!--      part1-->
+      <div style="display: flex">
+        <div></div>
+      </div>
 
     </div>
 
-    <!--底部导航栏-->
-    <div id="footer" class="acea-row row-middle" >
-      <router-link
-        :to="item.url"
-        class="item"
-        :class="{ on: item.url === $route.path }"
-        v-for="(item, index) in footerList"
-        :key="index"
-      >
-        <div
-          class="iconfont"
-          :class="item.icon1 + ' ' + (item.url === $route.path ? item.icon2 : '')"
-        ></div>
-        <div>{{ item.name }}</div>
-      </router-link>
-    </div>
+
 
 
   </div>

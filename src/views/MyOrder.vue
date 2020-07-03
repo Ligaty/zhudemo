@@ -69,7 +69,7 @@
     <hr/>
     <div class="list" style="width:100%;">
       <div class="item" v-for="order in orderList" :key="order.id">
-        <div class="title acea-row row-between-wrapper">
+        <div class="title acea-row row-between-wrapper" style="font-size:18px;">
           <div class="acea-row row-middle">
 
             订单号：{{ order.order_id }}
@@ -209,7 +209,7 @@
       </div>
     </div>
     <div class="noCart" v-if="orderList.length === 0 && page > 1">
-      <div class="pictrue"><img src="../../assets/images/noOrder.png" /></div>
+      <div class="pictrue"><img src="../assets/images/noOrder.png" /></div>
     </div>
     <Loading :loaded="loaded" :loading="loading"></Loading>
     <Payment
@@ -226,17 +226,17 @@
   </div>
 </template>
 <script>
-import { getOrderData, getOrderList } from "../../api/order";
+import { getOrderData, getOrderList } from "../api/order";
 import {
   cancelOrderHandle,
   payOrderHandle,
   takeOrderHandle
-} from "../../libs/order";
-import Loading from "../../components/Loading";
-import Payment from "../../components/Payment";
+} from "../libs/order";
+import Loading from "../components/Loading";
+import Payment from "../components/Payment";
 import { mapGetters } from "vuex";
-import { isWeixin } from "../../utils";
-import GeneralWindow from "../../components/GeneralWindow";
+import { isWeixin } from "../utils";
+import GeneralWindow from "../components/GeneralWindow";
 
 const STATUS = [
   "待付款",

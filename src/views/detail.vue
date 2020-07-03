@@ -3,7 +3,7 @@
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft" @click="onClickLeft"><van-icon name="arrow-left" /></span>
-      <span class="headmiddle" >订单列表</span>
+      <span class="headmiddle" >商品详情</span>
       <span class="headright" @click="onClickRight"><van-icon name="ellipsis" /></span>
     </div>
 
@@ -23,7 +23,7 @@
         <div>
           <span class="price">￥ {{minprice}} - {{maxprice}}</span>
           <span class="fprice">{{fprice}}</span>
-          <div class="share"><span class="glyphicon glyphicon-share-alt"></span>=>分享</div>
+          <div class="share"><span class="glyphicon glyphicon-share-alt"></span>分享</div>
         </div>
       </div>
 
@@ -129,8 +129,9 @@
   .head .headleft{float:left;margin-left:15px;font-size:20px;}
   .head .headmiddle{font-size:20px}
   .head .headright{float:right;margin-right:15px;font-size:20px}
+  .part1{width:100%}
   .part1 .slideshow1{
-    display:block;margin:0 auto;width:90%;max-width:90%;height:auto;border-radius: 25px;
+    display:block;margin:0 auto;width:100%;max-width:100%;height:auto;
   }
   .part2{
     margin-top: 30px;text-align: left;padding-left: 20px;
@@ -154,7 +155,7 @@
   .part3 .choose{float: right;margin-right: 10%;font-size: 25px;}
   .part4{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
   .part4_1{margin-bottom:8px}
-  .part5{padding: 20px;margin-bottom: 10px;}
+  .part5{margin-bottom: 10px;}
   .part5_1{background: gray}
   .imgdetail{width: 100%;height: auto}
   .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}

@@ -7,7 +7,7 @@ export default [
       keepAlive: false,
       auth: true
     },
-    component: () => import("@/views/order/MyOrder")
+    component: () => import("@/views/MyOrder")
   },
   {
     path: "/order/logistics/:id",
