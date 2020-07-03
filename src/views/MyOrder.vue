@@ -84,7 +84,7 @@
           >
             <div class="pictrue">
               <img
-                :src="cart.productInfo.image"
+                v-lazy="cart.productInfo.image"
                 @click.stop="
                   $router.push({ path: '/detail/' + cart.productInfo.id })
                 "
@@ -95,7 +95,7 @@
                 "
               />
               <img
-                :src="cart.productInfo.image"
+                v-lazy="cart.productInfo.image"
                 @click.stop="
                   $router.push({
                     path: '/activity/group_detail/' + cart.combination_id
@@ -104,7 +104,7 @@
                 v-else-if="cart.combination_id > 0"
               />
               <img
-                :src="cart.productInfo.image"
+                v-lazy="cart.productInfo.image"
                 @click.stop="
                   $router.push({
                     path: '/activity/dargain_detail/' + cart.bargain_id
@@ -113,7 +113,7 @@
                 v-else-if="cart.bargain_id > 0"
               />
               <img
-                :src="cart.productInfo.image"
+                v-lazy="cart.productInfo.image"
                 @click.stop="
                   $router.push({
                     path: '/activity/seckill_detail/' + cart.seckill_id
@@ -461,26 +461,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.noCart {
-  margin-top: 0.17rem;
-  padding-top: 0.1rem;
-}
+<style>
 
-.noCart .pictrue {
-  width: 4rem;
-  height: 3rem;
-  margin: 0.7rem auto 0.5rem auto;
-}
-
-.noCart .pictrue img {
-  width: 100%;
-  height: 100%;
-}
-.head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
-.head .headleft{float:left;margin-left:15px;font-size:20px;}
-.head .headmiddle{font-size:20px}
-.head .headright{float:right;margin-right:15px;font-size:20px}
-.tianchong{height: 20px;background: #efefef;margin-top:17px;}
-.blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
 </style>

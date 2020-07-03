@@ -1,5 +1,5 @@
 <template>
-  <div id="demo">
+  <div id="demo" class="AddAddress">
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft"  @click="onClickLeft"><van-icon name="arrow-left" /></span>
@@ -25,10 +25,23 @@
         </div>
         <hr/>
         <div class="addressinfo_1">
-          <van-row>
-            <van-col span="7"><span class="addressinfo_2" >地区</span></van-col>
-            <van-col span="12"><span><input placeholder="选择省/市/区" class="addressinfo_3"></span></van-col>
-          </van-row>
+
+          <van-field
+            readonly
+            clickable
+            label="城市"
+            :value="value"
+            placeholder="选择城市"
+            @click="showPicker = true"
+          />
+          <van-popup v-model="showPicker" round position="bottom">
+            <van-picker
+              show-toolbar
+              :columns="columns"
+              @cancel="showPicker = false"
+              @confirm="onConfirm"
+            />
+          </van-popup>
         </div>
         <hr/>
         <div class="addressinfo_1">
@@ -50,6 +63,8 @@
 
       </div>
 
+
+
     </div>
 
     <!--底部导航栏-->
@@ -63,6 +78,36 @@
     data(){
       return{
         active:'0',
+        value: '',
+        showPicker: false,
+        columns: [
+          {
+            text: '浙江',
+            children: [
+              {
+                text: '杭州',
+                children: [{ text: '西湖区' }, { text: '余杭区' }],
+              },
+              {
+                text: '温州',
+                children: [{ text: '鹿城区' }, { text: '瓯海区' }],
+              },
+            ],
+          },
+          {
+            text: '福建',
+            children: [
+              {
+                text: '福州',
+                children: [{ text: '鼓楼区' }, { text: '台江区' }],
+              },
+              {
+                text: '厦门',
+                children: [{ text: '思明区' }, { text: '海沧区' }],
+              },
+            ],
+          },
+        ],
       }
     },
     methods:{
@@ -78,20 +123,14 @@
       del(){
         alert("删除")
       },
+      onConfirm(value) {
+        this.value = value;
+        this.showPicker = false;
+      },
     }
   }
 </script>
 
 <style>
-  .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;}
-  .head .headmiddle{font-size:20px}
-  .head .headright{float:right;margin-right:15px;font-size:20px}
-  .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .addressinfo{text-align: left;margin: 0 7%;}
-  .addressinfo_1{margin-top: 19px;}
-  .addressinfo_2{font-weight: bold;font-size: 18px;margin-right: 8%}
-  .addressinfo_3{border: none}
-  .save{background: orangered;color: white;border-radius: 3px;height:40px;width: 100%;text-align: center;line-height: 40px;}
-  .del{background: #eeebeb;color: #828181;border-radius: 3px;height:40px;width: 100%;text-align: center;line-height: 40px;;margin-top:10px;}
+
 </style>

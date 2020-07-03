@@ -1652,7 +1652,8 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 }
 
 /*----------------------------------------*/
-/*新首页*/
+.tianchong{height: 20px;background: #efefef;}
+/*新首页homepage*/
 .homepage .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;background-image: linear-gradient(to right, #fa4209, #fa7e58, #ff5f36);color: white;font-family: 幼圆;}
 .homepage .head .headleft{float:left;margin-left:15px;font-size:20px;}
 .homepage .head .headmiddle{font-size:22px}
@@ -1702,7 +1703,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .homepage .part7 .css10 {width: 100%; height: 20px;;line-height: 20px;border-radius: 20px;font-size: 10px;background-image: linear-gradient(to right, #f5bb2a, #f58b1b, #f34c0a)}
 .homepage .part7 .jiaobiao{background-image: linear-gradient(to top right, #f608f0,#e87edb, #f36f0a);position: absolute;top:0;z-index:8;float:left;border-top-left-radius:10px;border-bottom-right-radius:10px;width:36%;height:35px;color:white;font-size:21px}
 
-/*新个人中心页*/
+/*新个人中心页PersonalCenter*/
 .PersonalCenter .head{background-image: linear-gradient(to right, #f83939 ,#fc5050, #ea7979); padding-top: 20px;padding-bottom: 20px;color: white}
 .PersonalCenter .head .headleft{float:left;margin-left:15px;font-size:20px;color: white}
 .PersonalCenter .head .headmiddle{font-size:20px;color: white}
@@ -1727,7 +1728,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .PersonalCenter .part4 .mypinbao{text-align: left;font-size: 0.36rem;font-weight: bolder;font-family: 新宋体;width:40%;margin-left: 10%}
 .PersonalCenter .part4 .pintext{font-size: 15px;text-align: center;font-family: 新宋体;margin-top:3px;color: #6a6c6d}
 
-/*拼宝页*/
+/*拼宝页pinbao*/
 .pinbaoye .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .pinbaoye .head .headleft{float:left;margin-left:15px;font-size:20px;}
 .pinbaoye .head .headmiddle{font-size:20px}
@@ -1771,7 +1772,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .pinbaoye .part7 .jiaobiao{background-image: linear-gradient(to top right, #f608f0,#e87edb, #f36f0a);position: absolute;top:0;z-index:8;float:left;border-top-left-radius:10px;border-bottom-right-radius:10px;width:36%;height:35px;color:white;font-size:21px}
 .pinbaoye .form-control{font-size:0.5rem;}
 
-/*充值页面*/
+/*充值页面nReCharge*/
 .chongzhi body{background: #f5f5f5;}
 .chongzhi .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .chongzhi .head .headleft{float:left;margin-left:15px;font-size:20px;}
@@ -1788,7 +1789,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .chongzhi .yiqian{width: 25%;border: 1px solid grey;border-radius: 5px;margin:0px 6%;height:50px;line-height: 50px;font-size:18px;}
 .chongzhi .press div:focus{color: #ff1e00;border-color: #ff1e00;background: #f5dfdf}
 
-/*我的G币*/
+/*我的G币MyGbi*/
 .MyGbi body{background: #f5f5f5;}
 .MyGbi .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .MyGbi .head .headleft{float:left;margin-left:15px;font-size:20px;}
@@ -1812,7 +1813,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .MyGbi .Gbi4 .quanbutime{color: grey;font-size: 18px;}
 .MyGbi .Gbi4 .quanbumoney{width: 20%;line-height: 40px;font-size: 18px;color:red}
 
-/*我参与的*/
+/*我参与的Involved*/
 .Involved .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .Involved .head .headleft{float:left;margin-left:15px;font-size:20px;}
 .Involved .head .headmiddle{font-size:20px}
@@ -1834,7 +1835,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .Involved .orderlistnumber{margin-left: 60%;color: #afb2b4}
 .Involved .pay{font-size:18px;font-weight: bold;margin-left: 50%;padding:2% 10%}
 
-/*地址管理*/
+/*地址管理AddressManage*/
 .AddressManage .addresscard{text-align: left;padding:20px;font-size:20px;display:flex;background: white}
 .AddressManage .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .AddressManage .head .headleft{float:left;margin-left:15px;font-size:20px;}
@@ -1849,7 +1850,7 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .AddressManage .tianchong{height: 15px;background: #f5f5f5;z-index:997;width: 100%}
 .AddressManage .addinfo{background: orangered;color: white;height: 70px;line-height: 70px;font-size:20px;position: fixed;bottom:50px;width: 100%}
 
-/*确认订单页*/
+/*确认订单页ComfirmOrder*/
 .ComfirmOrder body{background: #f5f5f5;}
 .ComfirmOrder .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
 .ComfirmOrder .head .headleft{float:left;margin-left:15px;font-size:20px;}
@@ -1897,20 +1898,191 @@ border-radius:0.3rem;color:#fff;line-height:0.5rem;text-align:center;bottom:0.17
 .ComfirmOrder .part6 .sumit{background: orangered;color:white;height: 60px;}
 
 
+/*（快递）订单详情OrderDetail*/
+.OrderDetail body{background: #f5f5f5;}
+.OrderDetail .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.OrderDetail .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.OrderDetail .head .headmiddle{font-size:20px}
+.OrderDetail .head .headright{float:right;margin-right:15px;font-size:20px}
+.OrderDetail .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.OrderDetail .part1{text-align: left;padding:4%;display: flex;background: white;}
+.OrderDetail .part1 .mapicon{height:35px;font-size:21px;text-align:center;color:white;background:orangered;border: 1px solid orangered;padding:5px;border-radius: 25px;}
+.OrderDetail .part1 .shoujianren{font-weight: bolder;font-size: 18px;}
+.OrderDetail .part1 .phone{font-weight: bolder;font-size: 18px;margin-left: 20%}
+.OrderDetail .part1 .address{color: #8b8a8a;margin-top:5px;font-size:16px;}
+.OrderDetail .part1 .wuliu{font-weight: bolder;font-size: 18px;}
+.OrderDetail .part1 .danhao{font-weight: bolder;font-size: 18px;}
+.OrderDetail .part1 .time{color: #8b8a8a;margin-top:5px;font-size:14px;}
+.OrderDetail .quanbu1{background: white;font-size: 18px;}
+.OrderDetail .quanbu1_1{padding: 3%;font-weight: bolder;}
+.OrderDetail .quanbuNum{font-size: 18px;}
+.OrderDetail .quanbuState{font-size: 18px;margin-left: 1%;color: #f63333}
+.OrderDetail .quanbu2{text-align:left;display: -webkit-box;-webkit-box-orient:horizontal;padding:10px 0px;}
+.OrderDetail .orderlistgoodImg{width: 120px;}
+.OrderDetail .quanbu2_2{width:70%;display: -webkit-box;-webkit-box-orient: vertical;margin-top:10px;}
+.OrderDetail .orderlistgoodsName{text-align: left;font-size: 20px;font-weight: bolder;margin-top: 10px;}
+.OrderDetail .orderlistprice{display: -webkit-box;-webkit-box-orient:horizontal;margin-top:13px;}
+.OrderDetail .orderlistnumber{margin-left: 60%;color: #afb2b4}
+.OrderDetail .pay{font-size:18px;font-weight: bold;margin-left: 40%;padding:2% 10%}
+.OrderDetail .part4_0{display: flex;margin:5px 0px;}
+.OrderDetail .part4_1{width:60%;text-align: left;font-size: 20px;}
+.OrderDetail .part4_2{width:40%;text-align: right;font-size: 19px;font-weight: bolder}
+.OrderDetail .part4_2_1{width:60%;text-align: right;font-size: 16px;font-weight: bolder}
+.OrderDetail .shiji{color:orangered}
+.OrderDetail .part5{background: white;padding: 20px;}
+.OrderDetail .part5 .chakanwuliu{border: 1px solid grey;border-radius: 20px;padding:10px;color: grey;width:30%;}
+.OrderDetail .part5 .querenshouhuo{border: 1px solid orangered;border-radius: 20px;padding:10px;color: orangered;width:30%;}
+
+/*物流信息LogisticsInformation*/
+.LogisticsInformation body{background: #f5f5f5;}
+.LogisticsInformation .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.LogisticsInformation .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.LogisticsInformation .head .headmiddle{font-size:20px}
+.LogisticsInformation .head .headright{float:right;margin-right:15px;font-size:20px}
+.LogisticsInformation .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+
+/*商品详情detail*/
+.detail .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.detail .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.detail .head .headmiddle{font-size:20px}
+.detail .head .headright{float:right;margin-right:15px;font-size:20px}
+.detail .part1{width:100%}
+.detail .part1 .slideshow1{display:block;margin:0 auto;width:100%;max-width:100%;height:auto;}
+.detail .part2{margin-top: 30px;text-align: left;padding-left: 20px;}
+.detail .part2 .commodity{font-size: 25px;font-weight: bold;}
+.detail .part2 .price{font-size: 24px;font-weight: bold;color: #e74202;}
+.detail .part2 .fprice{color: #b4b5b6;text-decoration:line-through;font-size: 17px;}
+.detail .part2 .share{float: right;color: rgba(141, 124, 123, 0.83);border: 2px #d7d4d4 solid;background: #d7d4d4;padding: 5px;border-radius: 25px 0 0 25px;}
+.detail .tianchong{height: 20px;background: #efefef;margin-top:17px;}
+.detail .part3{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
+.detail .xuanze{font-size:19px;color: #7d7979;font-family: 宋体;}
+.detail .xilie{font-size: 19px;margin-left:3%;font-family: 宋体;}
+.detail .part3 .choose{float: right;margin-right: 10%;font-size: 25px;}
+.detail .part4{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
+.detail .part4_1{margin-bottom:8px}
+.detail .part5{margin-bottom: 10px;}
+.detail .part5_1{background: gray}
+.detail .imgdetail{width: 100%;height: auto}
+.detail .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.detail .shoucang1.active{color:#ff5000}
+
+/*拼宝商品详情页pindetail*/
+.pindetail .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.pindetail .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.pindetail .head .headmiddle{font-size:20px}
+.pindetail .head .headright{float:right;margin-right:15px;font-size:20px}
+.pindetail .part1{width:100%}
+.pindetail .part1 .slideshow1{display:block;margin:0 auto;width:100%;max-width:100%;height:auto;}
+.pindetail .part2{background: white;display: flex}
+.pindetail .part2 .commodity{font-size: 20px;font-weight: bold;width:84%;text-align: left;padding:10px 15px;}
+.pindetail .part2 .share{text-align: right;border: 2px #f5f5f5 solid;background: #f5f5f5;padding: 5px;border-radius: 25px 0 0 25px;color: rgb(102,102,102);}
+.pindetail .tianchong{height: 20px;background: #efefef;}
+.pindetail .part3{background: white;padding-bottom: 10px;}
+.pindetail .part3 .part3_1{border-radius: 20px;height: 20px;background: rgba(177,173,173,0.54)}
+.pindetail .part3 .part3_2{width:50%;border-radius: 20px;height: 20px; background-image: linear-gradient(to right, #fcb54b , #ff6600);}
+.pindetail .part3 .fenshu1{font-size: 23px;font-weight: bolder;color: orangered}
+.pindetail .part4{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
+.pindetail .part4_1{margin-bottom:8px}
+.pindetail .part5{margin-bottom: 10px;padding:10px;}
+.pindetail .part5_1{background: gray}
+.pindetail .imgdetail{width: 100%;height: auto}
+.pindetail .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.pindetail .shoucang1.active{color:#ff5000}
+.pindetail .colon {display: inline-block;margin: 0 4px;color: #ee0a24;}
+.pindetail .block {display: inline-block;width: 22px;color: #fff;font-size: 12px;text-align: center;background-color: #ee0a24;}
+
+/*新增地址页AddAddress*/
+.AddAddress .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.AddAddress .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.AddAddress .head .headmiddle{font-size:20px}
+.AddAddress .head .headright{float:right;margin-right:15px;font-size:20px}
+.AddAddress .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.AddAddress .addressinfo{text-align: left;padding:4% 7%;background:white}
+.AddAddress input::-webkit-input-placeholder{font-size:17px;color:grey}
+.AddAddress input:-moz-placeholder{font-size: 17px;color:grey}
+.AddAddress .addressinfo_1{margin-top: 19px;margin-bottom: 10px;}
+.AddAddress .addressinfo_2{font-weight: bold;font-size: 20px;margin-right: 8%}
+.AddAddress .addressinfo_3{border: none}
+.AddAddress .save{color: white;border-radius: 3px;height:40px;width: 100%;text-align: center;line-height: 40px;margin-top:20px;background-image: linear-gradient(to right, #fca547, #ff5100);}
+.AddAddress .del{background: #eeebeb;color: #828181;border-radius: 3px;height:40px;width: 100%;text-align: center;line-height: 40px;;margin-top:10px;}
+.AddAddress .van-field__control{margin-left:13px;font-size:19px;color:grey}
+.AddAddress .van-cell{padding:0px;font-size:19px;font-weight: bolder}
+
+
+/*申请VIPRegisterVIP*/
+.RegisterVIP body{background: #f5f5f5;}
+.RegisterVIP .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.RegisterVIP .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.RegisterVIP .head .headmiddle{font-size:20px}
+.RegisterVIP .head .headright{float:right;margin-right:15px;font-size:20px}
+.RegisterVIP .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.RegisterVIP .textkuang{border: 1px solid #dbdada;padding:10px;font-size:16px;margin:5%;text-align: left}
+.RegisterVIP .Vregister{font-size: 15px;margin:5%;line-height: 45px;border-radius:5px;height:45px;color:white;background-image: linear-gradient(to right, #fc763c , #ff2600);}
+
+/*加入购物车AddToCart*/
+.AddToCart body{background: #f5f5f5;}
+.AddToCart .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.AddToCart .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.AddToCart .head .headmiddle{font-size:20px}
+.AddToCart .head .headright{float:right;margin-right:15px;font-size:20px}
+.AddToCart .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.AddToCart .kuang{border: 1px solid grey;padding:5px 8px;width:100px;margin:10px 10px 10px 0;border-radius: 5px;}
+.AddToCart .kuang1{border: 1px solid orangered;background: #ff9f7b;padding:5px 8px;width:100px;margin:10px 10px 10px 0;border-radius: 5px;}
+.AddToCart .part1{display: flex}
+.AddToCart .part1 .Cimg{width: 30%;padding:10px 0 10px 30px;}
+.AddToCart .part1 .part1_2{width:70%;text-align: left;padding:12px 0 20px 10px;}
+.AddToCart .part1 .part1_2_1{color: orangered;font-size:21px;}
+.AddToCart .part2 {padding: 16px;}
+.AddToCart .part2 .fenlei{text-align: left;font-weight: bolder;font-size: 18px;}
+.AddToCart .rongliang{text-align: left;font-weight: bolder;font-size: 18px;margin-top:20px;}
+.AddToCart .part3 {display: flex}
+.AddToCart .part3 .shuliang{width: 60%;text-align: left;font-weight: bolder;padding: 16px;font-size: 18px;}
+.AddToCart .part3 .jiajian{width: 40%}
+.AddToCart .part4{bottom:0px;border:1px solid orangered;color:white;font-size:18px;line-height:50px;background: orangered}
 
 
 
+/*订单列表my-order*/
+.my-order .noCart {margin-top: 0.17rem;padding-top: 0.1rem;}
+.my-order .noCart .pictrue {width: 4rem;height: 3rem;margin: 0.7rem auto 0.5rem auto;}
+.my-order .noCart .pictrue img {width: 100%;height: 100%;}
+.my-order .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
+.my-order .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.my-order .head .headmiddle{font-size:20px}
+.my-order .head .headright{float:right;margin-right:15px;font-size:20px}
+.my-order .tianchong{height: 20px;background: #efefef;margin-top:17px;}
+.my-order .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
 
 
-
-
-
-
-
-
-
-
-
+/*购物车ShoppingCart*/
+.ShoppingCart body{background: #f5f5f5;}
+.ShoppingCart .container{background: #fff;padding:0;margin-bottom: 10px;}
+.ShoppingCart .head{font-weight: bold;background-color: #efefef; padding-top: 20px;padding-bottom: 20px;}
+.ShoppingCart .head .headleft{float:left;margin-left:15px;font-size:20px;}
+.ShoppingCart .head .headmiddle{font-size:20px}
+.ShoppingCart .head .headright{float:right;margin-right:15px;font-size:20px}
+.ShoppingCart .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
+.ShoppingCart .footer{position: fixed;bottom:50px;border-top: 1px solid #ccc;display: flex;justify-content: space-between;width: 100%;}
+.ShoppingCart .foot-left{line-height: 50px;font-size: 18px;width:70%;flex:1;display: flex;justify-content: space-between;}
+.ShoppingCart .foot-left1{margin-left: 15%;text-align: left;}
+.ShoppingCart .foot-left2{text-align: right;padding-right: 10px;justify-content: space-between;}
+.ShoppingCart .foot-left2 span{color:red;}
+.ShoppingCart .footer-right{background: red;color: #ffff;width:30%;height:50px;text-align: center;line-height: 50px;}
+.ShoppingCart .zhuzhu{line-height: 65px;font-size: 18px;height: 50px;display: flex;justify-content: space-between;margin-bottom: 10px;}
+.ShoppingCart .zhuzhu1{text-align: left;padding-left: 5%;}
+.ShoppingCart .zhuzhu2{color:#808080;text-align: right;padding-right: 5%;}
+.ShoppingCart .tianchong{height: 15px;background: #efefef;z-index:997;width: 100%}
+.ShoppingCart .item{padding-right:20px;z-index:998;margin-bottom: 12px;}
+.ShoppingCart .shopDetails{background:#fff;display: flex;text-align: left;padding-top:18px;line-height: 30px;}
+.ShoppingCart .shopDetails img{width:100px;margin-right: 3%;height:130px;}
+.ShoppingCart .detailName{font-size: 19px;font-weight: bold;color: #444343;}
+.ShoppingCart .listmore{color: #504f4f}
+.ShoppingCart .shopprice{margin-top:10px;display: flex}
+.ShoppingCart .listprice{font-size: 19px;width: 50%;color: #504f4f}
+.ShoppingCart .shopNum{text-align: right;margin-left: 40px;width: 50%}
+.ShoppingCart .shopNum button{width: 31px;height: 28px;text-align:center;background: #e0e0e0;color: #58595b;border:none;outline: none;}
+.ShoppingCart .shopNum input{width:37px;height: 25px;border:none;text-align: center;outline: none;}
+.ShoppingCart .mint-cell-swipe-button{line-height: 180px;}
 
 
 

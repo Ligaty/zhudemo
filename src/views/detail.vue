@@ -1,5 +1,5 @@
 <template>
-  <div id="demo">
+  <div id="demo" class="detail">
     <!--头部导航栏-->
     <div class="head">
       <span class="headleft" @click="onClickLeft"><van-icon name="arrow-left" /></span>
@@ -62,7 +62,7 @@
     <van-goods-action>
       <van-goods-action-icon icon="home-o" text="首页" @click="Toshouye" color="#00c130"/>
       <van-goods-action-icon icon="chat-o" text="客服" color="#00c130" />
-      <van-goods-action-icon icon="star" color="#00c130" @click="shoucang" text="收藏" :class='{"icon":true,"shoucang1":true,"active":isSelected}' />
+      <van-goods-action-icon icon="star" color="#00c130" @click="shoucang" text="收藏"  />
       <van-goods-action-button type="warning" text="加入购物车" />
       <van-goods-action-button type="danger" text="立即购买" />
     </van-goods-action>
@@ -125,39 +125,5 @@
 </script>
 
 <style>
-  .head{font-weight: bold;background-color: #f5f3f3; padding-top: 20px;padding-bottom: 20px;}
-  .head .headleft{float:left;margin-left:15px;font-size:20px;}
-  .head .headmiddle{font-size:20px}
-  .head .headright{float:right;margin-right:15px;font-size:20px}
-  .part1{width:100%}
-  .part1 .slideshow1{
-    display:block;margin:0 auto;width:100%;max-width:100%;height:auto;
-  }
-  .part2{
-    margin-top: 30px;text-align: left;padding-left: 20px;
-  }
-  .part2 .commodity{
-    font-size: 25px;font-weight: bold;
-  }
-  .part2 .price{
-    font-size: 24px;font-weight: bold;color: #e74202;
-  }
-  .part2 .fprice{
-    color: #b4b5b6;text-decoration:line-through;font-size: 17px;
-  }
-  .part2 .share{
-    float: right;color: rgba(141, 124, 123, 0.83);border: 2px #d7d4d4 solid;background: #d7d4d4;padding: 5px;border-radius: 25px 0 0 25px;
-  }
-  .tianchong{height: 20px;background: #efefef;margin-top:17px;}
-  .part3{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
-  .xuanze{font-size:19px;color: #7d7979;font-family: 宋体;}
-  .xilie{font-size: 19px;margin-left:3%;font-family: 宋体;}
-  .part3 .choose{float: right;margin-right: 10%;font-size: 25px;}
-  .part4{margin-top: 30px;text-align: left;padding-left: 20px;margin-bottom: 30px;}
-  .part4_1{margin-bottom:8px}
-  .part5{margin-bottom: 10px;}
-  .part5_1{background: gray}
-  .imgdetail{width: 100%;height: auto}
-  .blank{margin-bottom: 70px;margin-top:8px;text-align: center;float:left;width:100%;height:auto;color:darkgrey;}
-  .shoucang1.active{color:#ff5000}
+
 </style>

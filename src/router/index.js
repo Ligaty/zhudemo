@@ -28,6 +28,10 @@ import MyGbi from "@/views/MyGbi";
 import nReCharge from "@/views/nReCharge";
 import ConfirmOrder from "@/views/ConfirmOrder";
 import OrderDetail from "@/views/OrderDetail";
+import LogisticsInformation from "@/views/LogisticsInformation";
+import pindetail from "@/views/pindetail";
+import RegisterVIP from "@/views/RegisterVIP";
+import AddToCart from "@/views/AddToCart";
 
 
 
@@ -116,6 +120,26 @@ export default new Router({
       path: '/OrderDetail',
       name: 'OrderDetail',
       component: OrderDetail
+    },
+    {
+      path: '/LogisticsInformation',
+      name: 'LogisticsInformation',
+      component: LogisticsInformation
+    },
+    {
+      path: '/pindetail',
+      name: 'pindetail',
+      component: pindetail
+    },
+    {
+      path: '/RegisterVIP',
+      name: 'RegisterVIP',
+      component: RegisterVIP
+    },
+    {
+      path: '/AddToCart',
+      name: 'AddToCart',
+      component: AddToCart
     },
     {
       path: "/customer/chat/:id/:productId?",

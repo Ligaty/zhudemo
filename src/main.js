@@ -28,6 +28,8 @@ import "@/assets/css/reset.css";
 import "@/assets/css/style.css";
 import { isWeixin, parseQuery } from "@/utils";
 import vueLazyLoad from "vue-lazyload";
+import { Area } from 'vant';
+Vue.use(Area);
 
 Vue.use(vueLazyLoad, {
   preload: 1.3, //加载高度比。
